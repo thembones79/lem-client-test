@@ -1,0 +1,13 @@
+@import "./base";
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // transition: 1.3s;
+  overflow: hidden;
+  background-color: $background-color;
+}

@@ -1,0 +1,223 @@
+/* colors */
+$primary-color2: #474766;
+$primary-color: #656588;
+$faded-color: #65658880;
+$accent-color: #1160a9;
+$accent-color2: #0060a9;
+$background-color: #f5f6f8;
+$foreground-color: #ffffff;
+$success-color: #39c139;
+$danger-color: #f86969;
+$disabled-color: #eaeaea;
+
+@mixin riverdi-gradient {
+  color: #ffb813;
+  line-height: 1.2em;
+  background-image: linear-gradient(45deg, #f9db49, #ff7600 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {
+    @content;
+  }
+  :-moz-placeholder {
+    @content;
+  }
+  ::-moz-placeholder {
+    @content;
+  }
+  :-ms-input-placeholder {
+    @content;
+  }
+}
+
+/* fonts */
+$primary-font: "Montserrat", sans-serif;
+$accent-font: "Oswald", sans-serif;
+
+/* sizes */
+$header-height: 70px;
+$page-height: calc(100vh - 70px);
+$sidebar-width: 350px;
+
+/* shadows */
+$normal-shadow: 0px 10px 30px 0px rgba(0, 72, 155, 0.09);
+$big-shadow: 0 1.9px 1.6px rgba(0, 0, 0, 0.024),
+  0 4.3px 3.6px rgba(0, 0, 0, 0.035), 0 7.6px 6.3px rgba(0, 0, 0, 0.043),
+  0 12px 10px rgba(0, 0, 0, 0.05), 0 18.5px 15.5px rgba(0, 0, 0, 0.057),
+  0 28.9px 24.1px rgba(0, 0, 0, 0.065), 0 48px 40px rgba(0, 0, 0, 0.076),
+  0 96px 80px rgba(0, 0, 0, 0.1);
+$disabled-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 1);
+$cancel-btn-shadow: 0px 2px 5px 0px rgba(71, 71, 102, 0.2);
+$primary-btn-shadow: 0px 5px 10px 0px rgba(71, 71, 102, 0.4);
+$primary-btn-shadow-hover: 0px 12px 28px 0px rgba(71, 71, 102, 0.45);
+$accent-btn-shadow: 0px 5px 10px 0px rgba(17, 96, 169, 0.4);
+$accent-btn-shadow-hover: 0px 12px 28px 0px rgba(17, 96, 169, 0.45);
+$danger-btn-shadow: 0px 5px 10px 0px rgba(255, 105, 105, 0.4);
+$danger-btn-alt-shadow: 0px 0px 8px 0px rgba(255, 105, 105, 0.99);
+$danger-btn-shadow-hover: 0px 12px 28px 0px rgba(255, 105, 105, 0.45);
+$success-btn-shadow: 0px 5px 10px 0px rgba(15, 193, 57, 0.4);
+
+/* borders */
+$small-radius: 10px;
+$normal-radius: 20px;
+$big-radius: 40px;
+
+/* CSS reset */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+input,
+option,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  color: $primary-color;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: $primary-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1;
+  color: $primary-color;
+  fill: $primary-color;
+  background: $background-color;
+  font-family: $primary-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+}
+blockquote,
+q {
+  quotes: "" "";
+}
+input {
+  font-family: $primary-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+select {
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+  background: white
+    //url("data:image/svg+xml,%3Csvg xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:cc='http://creativecommons.org/ns%23' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns%23' xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' sodipodi:docname='arrowDown4.svg' inkscape:version='1.0beta1 (32d4812, 2019-09-19)' id='svg8' version='1.1' viewBox='0 0 10.583333 10.583334' height='40' width='40'%3E%3Cdefs id='defs2' /%3E%3Csodipodi:namedview inkscape:window-maximized='0' inkscape:window-y='46' inkscape:window-x='124' inkscape:window-height='907' inkscape:window-width='1600' units='px' showgrid='false' inkscape:document-rotation='0' inkscape:current-layer='layer1' inkscape:document-units='mm' inkscape:cy='18.831517' inkscape:cx='-1.9788477' inkscape:zoom='9.4125047' inkscape:pageshadow='2' inkscape:pageopacity='0.0' borderopacity='1.0' bordercolor='%23666666' pagecolor='%23ffffff' id='base' /%3E%3Cmetadata id='metadata5'%3E%3Crdf:RDF%3E%3Ccc:Work rdf:about=''%3E%3Cdc:format%3Eimage/svg+xml%3C/dc:format%3E%3Cdc:type rdf:resource='http://purl.org/dc/dcmitype/StillImage' /%3E%3Cdc:title%3E%3C/dc:title%3E%3C/cc:Work%3E%3C/rdf:RDF%3E%3C/metadata%3E%3Cg id='layer1' inkscape:groupmode='layer' inkscape:label='Layer 1'%3E%3Crect y='3.9418209' x='2.424706' height='3.2934723' width='7.9816613' id='rect855' style='fill:%23ffffff;fill-opacity:1;stroke:none;stroke-width:0.482798;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1' /%3E%3Cpath sodipodi:nodetypes='cc' style='fill:none;stroke:%23656588;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1' d='M 3.8456242,5.1010638 5.2104355,5.9761701' id='path889' inkscape:connector-curvature='0' /%3E%3Cpath inkscape:connector-curvature='0' id='path891' d='M 6.5752468,5.1010638 5.2104355,5.9761701' style='fill:none;stroke:%23656588;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1' sodipodi:nodetypes='cc' /%3E%3C/g%3E%3C/svg%3E")
+    url("data:image/svg+xml,%3Csvg xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:cc='http://creativecommons.org/ns%23' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns%23' xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' width='40' height='40' viewBox='0 0 10.583333 10.583334' version='1.1' id='svg8' inkscape:version='1.0beta1 (32d4812, 2019-09-19)' sodipodi:docname='arrowDown6.svg'%3E%3Cdefs id='defs2' /%3E%3Csodipodi:namedview id='base' pagecolor='%23ffffff' bordercolor='%23666666' borderopacity='1.0' inkscape:pageopacity='0.0' inkscape:pageshadow='2' inkscape:zoom='7.1678246' inkscape:cx='42.07535' inkscape:cy='48.609916' inkscape:document-units='mm' inkscape:current-layer='g844' inkscape:document-rotation='0' showgrid='false' units='px' inkscape:window-width='1600' inkscape:window-height='907' inkscape:window-x='0' inkscape:window-y='25' inkscape:window-maximized='0' /%3E%3Cmetadata id='metadata5'%3E%3Crdf:RDF%3E%3Ccc:Work rdf:about=''%3E%3Cdc:format%3Eimage/svg+xml%3C/dc:format%3E%3Cdc:type rdf:resource='http://purl.org/dc/dcmitype/StillImage' /%3E%3Cdc:title%3E%3C/dc:title%3E%3C/cc:Work%3E%3C/rdf:RDF%3E%3C/metadata%3E%3Cg inkscape:label='Layer 1' inkscape:groupmode='layer' id='layer1'%3E%3Cg id='g844'%3E%3Crect y='3.9418209' x='2.424706' height='3.2934723' width='7.9816613' id='rect855' style='fill:%23ffffff;fill-opacity:1;stroke:none;stroke-width:0.482798;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1' /%3E%3Cpath sodipodi:nodetypes='cc' style='fill:none;stroke:%23656588;stroke-width:0.26458333;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1' d='M 3.8456242,5.1010638 5.2104355,5.9761701' id='path889' inkscape:connector-curvature='0' /%3E%3Cpath inkscape:connector-curvature='0' id='path891' d='M 6.5752468,5.1010638 5.2104355,5.9761701' style='fill:none;stroke:%23656588;stroke-width:0.26458333;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1' sodipodi:nodetypes='cc' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A")
+    right center no-repeat !important;
+  background-position: calc(100% + 5px) center !important;
+}
+
+strong {
+  font-weight: 700;
+  margin: 20px 0 20px 0;
+}
+
+em {
+  font-style: italic;
+  margin: 20px 0 20px 0;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
